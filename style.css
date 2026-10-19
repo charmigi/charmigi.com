@@ -16,10 +16,10 @@ a:hover{color:#fff;background:#111}
 .pron{color:#888;font-size:14px}
 .pos{color:#888;font-size:13px;font-style:italic}
 .etym{margin:0 0 10px;font-size:12px;color:#666}
-.defs{margin:0 0 12px;padding-left:22px;color:#d4d4d4}
-.defs > li{margin-bottom:6px}
-.works{list-style:none;margin:6px 0 0;padding:10px 0 0;border-top:1px solid #333}
-.works li{margin:7px 0;font-size:13px}
+.defs{margin:0 0 14px;padding-left:22px;color:#d4d4d4;font-size:14px;line-height:1.75}
+.defs > li{margin-bottom:12px}
+.works{list-style:none;margin:10px 0 0;padding:12px 0 0;border-top:1px solid #333}
+.works li{margin:9px 0;font-size:13px;line-height:1.6}
 .pname{color:#fff;letter-spacing:2px;font-variant:small-caps;text-decoration:underline}
 .foot{font-size:11px;color:#666;letter-spacing:1px;border-top:1px solid #333;padding-top:8px}
 .corner-rat{position:fixed;right:10px;bottom:12px;width:92px;height:auto;filter:grayscale(1);opacity:.95}
