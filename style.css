@@ -1,25 +1,114 @@
-/* charmigi — dictionary entry, minimal gothic, pure mono */
+@font-face{
+  font-family:"EB Garamond";
+  src:url("assets/fonts/ebgaramond-400.woff2") format("woff2");
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"EB Garamond";
+  src:url("assets/fonts/ebgaramond-600.woff2") format("woff2");
+  font-weight:600;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"EB Garamond";
+  src:url("assets/fonts/ebgaramond-italic.woff2") format("woff2");
+  font-weight:400;font-style:italic;font-display:swap;
+}
+
+/* charmigi — a dictionary plate */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;overflow:hidden;
-  background:#000;color:#d4d4d4;
-  font-family:Georgia,serif;
-  font-size:15px;line-height:1.6;
+  background:#000;color:#c8c8c8;
+  font-family:"EB Garamond",Garamond,"Iowan Old Style",Palatino,"Book Antiqua",Georgia,serif;
+  font-size:13px;line-height:1.55;
+  font-variant-ligatures:common-ligatures;
+  -webkit-font-smoothing:antialiased;
 }
-a{color:#d4d4d4}
-a:hover{color:#fff;background:#111}
-.screen{height:100dvh;display:flex;align-items:center;justify-content:center;padding:12px;position:relative}
-.frame{width:min(460px,100%);text-align:left}
-.entry{margin:0 0 2px;font-size:22px}
-.word{color:#eee;font-variant:small-caps;letter-spacing:4px}
-.pron{color:#888;font-size:14px}
-.pos{color:#888;font-size:13px;font-style:italic}
-.etym{margin:0 0 10px;font-size:12px;color:#666}
-.defs{margin:0 0 14px;padding-left:22px;color:#d4d4d4;font-size:14px;line-height:1.75}
-.defs > li{margin-bottom:12px}
-.works{list-style:none;margin:10px 0 0;padding:12px 0 0;border-top:1px solid #333}
-.works li{margin:9px 0;font-size:13px;line-height:1.6}
-.pname{color:#fff;letter-spacing:2px;font-variant:small-caps;text-decoration:underline}
-.foot{font-size:11px;color:#666;letter-spacing:1px;border-top:1px solid #333;padding-top:8px}
-.corner-rat{position:fixed;right:10px;bottom:12px;width:92px;height:auto;filter:grayscale(1);opacity:.95}
+a{color:#c8c8c8;text-decoration:none}
+a:hover{color:#fff}
+
+.screen{
+  height:100dvh;display:flex;align-items:center;justify-content:center;
+  padding:24px;position:relative;
+}
+
+/* the plate */
+.entry{
+  position:relative;
+  width:min(470px,100%);
+  padding:20px 26px 14px;
+  border:1px solid #2e2e2e;
+  box-shadow:inset 0 0 0 4px #000, inset 0 0 0 5px #1e1e1e;
+  background:#000;
+}
+
+/* headword */
+.head{margin:0}
+.word{
+  font-size:26px;font-weight:400;color:#f4f4f4;
+  letter-spacing:.22em;text-transform:uppercase;
+  font-feature-settings:"smcp" 1;
+}
+.pron{font-style:italic;font-size:12px;color:#8a8a8a;letter-spacing:.02em;margin-left:6px}
+.pos{font-style:italic;font-size:12px;color:#8a8a8a;margin-left:2px}
+
+.etym{margin:0;font-size:12px;color:#6f6f6f;letter-spacing:.03em}
+.etym .lbl{color:#8f8f8f;letter-spacing:.10em;text-transform:uppercase;font-size:10px}
+.etym i{color:#9a9a9a}
+
+/* ornamental rule: hairline with centred lozenge */
+.rule{
+  position:relative;height:1px;background:#2a2a2a;
+  margin:11px 0 13px;
+}
+.rule::after{
+  content:"";position:absolute;left:50%;top:50%;
+  width:5px;height:5px;margin:-2.5px 0 0 -2.5px;
+  background:#8a8a8a;transform:rotate(45deg);
+}
+
+/* definitions */
+.defs{
+  margin:0;padding-left:18px;font-size:13px;line-height:1.5;
+}
+.defs li{margin:0 0 9px;padding-left:1px}
+.defs li::marker{
+  color:#7d7d7d;font-size:12px;font-weight:600;
+  font-feature-settings:"lnum" 1;
+}
+.defs i{color:#a8a8a8}
+
+/* works */
+.works{
+  list-style:none;margin:7px 0 0;padding:0;
+  font-size:13px;line-height:1.45;
+}
+.works li{margin:0 0 6px;padding-left:20px;text-indent:-20px}
+.works li:last-child{margin-bottom:0}
+.pname{
+  color:#e8e8e8;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+}
+.works a:hover .pname{color:#fff;border-bottom:1px solid #fff}
+
+/* footer */
+.foot{
+  font-size:12px;color:#767676;letter-spacing:.04em;
+}
+.foot a{color:#9a9a9a}
+.foot a:hover{color:#fff}
+.sep{color:#454545;padding:0 2px}
+
+/* the rat */
+.corner-rat{
+  position:fixed;right:10px;bottom:12px;width:92px;height:auto;
+  filter:grayscale(1);opacity:.9;
+}
+
+@media(max-width:520px){
+  .entry{padding:18px 18px 12px;border-left:0;border-right:0}
+  .word{font-size:22px;letter-spacing:.16em}
+  .pron{display:block;margin:3px 0 0}
+  .pos{display:block;margin:0}
+  .etym{margin-top:5px}
+}
